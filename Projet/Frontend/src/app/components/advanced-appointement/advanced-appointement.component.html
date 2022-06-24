@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div>
+<form [formGroup]="fg">
+    <div class="grid grid-cols-1 items-center  m-40">
+        
+        <div style="    width: 100%;padding: 20px;" class="m-auto  bg-white items-center  rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div class="grid grid-cols-2 gap-2 items-center  m-10">
+                <div class="col-span-2">
+                    <h2 class="text-xl"> Automated Appointment</h2>
+                </div>
+                 <div *ngIf="appointement==null">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <input formControlName="date" id="datePicker"  #datePicker (change)="changeDate($event)"  datepicker-format="yyyy-mm-dd"  datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 tw-datepicker" placeholder="Select date">
+                      </div>
+                </div>
+                <div *ngIf="appointement==null">
+                    <select required formControlName="time" [(ngModel)]="rvTime" id="default" class="bg-gray-50 border border-gray-300 text-gray-900  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected value="09:00:00">09:00</option>
+                        <option selected value="10:00:00">10:00</option>
+                        <option selected value="11:00:00">11:00</option>
+                        <option selected value="12:00:00">12:00</option>
+
+                     
+                        <option selected value="14:00:00">14:00</option>
+                        <option selected value="15:00:00">15:00</option>
+                        <option selected value="16:00:00">16:00</option>
+                        
+                      </select>
+                </div>
+                <div *ngIf="dateError" style="color: red" class="col-span-2">
+                    date doit etre superieur ou egale a {{rvDate}}
+                </div>
+                <div style="margin: auto;" *ngIf="this.appointement && !this.isPayed" #payment class="col-span-2">
+                    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+                </div>
+                <div [style]="'color:'+(this.error?'red':'green')" class="col-span-2" *ngIf="appointement!=null">
+                    {{this.msg}}
+                </div>
+                <div class="col-span-2" *ngIf="this.btnshow">
+                    <button  class=" rounded-lg bg-sky-500 w-full text-white py-2 px-6 m-2" (click)="makeAppointement($event)">
+                        <a  (click)="makeAppointement($event)">{{btn}}</a> 
+                    </button>
+
+                </div>
+                
+       
+            </div>
+        </div>
+
+   
+    </div>
+    </form>
+
+</div>
+
+
+
+<app-footer></app-footer>

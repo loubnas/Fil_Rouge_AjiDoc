@@ -1,0 +1,80 @@
+   <!-- header -->
+   <header class="header  home">
+    <div class="bg-sky-700 bg-opacity-60 w-full h-screen">
+       
+        <!-- end navbar -->
+        <app-navbar></app-navbar>
+        <!-- content -->
+        <div class="flex flex-col items-center justify-center">
+            <div class="w-full text-center md:w-1/2 mb-20 ">
+                <p class="font-bold text-4xl mt-40 text-white">
+                    Reserve an Appointment</p>
+            </div>
+            <div class="w-full text-center md:w-1/2 h-full ">
+                <div class="flex flex-col md:flex-row">
+                    <input  [(ngModel)]="this.searchKeyword" class="rounded-l-lg p-4 border-t md:w-2/3 w-full  border-b border-l text-gray-800  bg-white" placeholder="doctor's name , speciality , medical office , or city"/>
+                   
+                    <button class="px-8 rounded-r-lg bg-sky-800 w-full md:w-1/3 text-white font-bold p-4 uppercase border-sky-800 border-t border-b border-r" (click)="search()">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- end content -->
+
+    </div>
+
+
+</header>
+<!-- end header -->
+ <!-- type RDV -->
+ <div class="flex flex-col mt-20 items-center justify-center h-screen">
+    <div class="w-full text-center mb-20 ">
+        <h1 class="font-bold text-4xl pb-3 ">
+         Appointment
+        </h1>
+        <p >
+            You can choose between two types of appointments according to your needs.
+        </p>
+    </div>
+        <div class="flex flex-wrap  justify-evenly">
+           <div class=" md:w-1/4 xl:w-1/4  px-4">
+            <div class="bg-white rounded-lg flex items-center flex-col overflow-hidden mb-10 drop-shadow-md">
+                <img src="./assets/Groupe 9.png" class="w-1/4 mt-5" >
+                 <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                    <h3 class=" font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary ">
+                      
+                       Simple Appointement 
+                       
+                    </h3>
+                    <p class="text-base text-body-color leading-relaxed mb-7">
+                        It is an appointment which must be confirmed by the doctor and validated after having moved to make a payment in the cabinet
+                    </p>
+                 </div>
+              </div>
+           </div>
+           <div class="md:w-1/4 xl:w-1/4 px-4">
+              <div class="bg-white rounded-lg flex items-center flex-col overflow-hidden mb-10 drop-shadow-md">
+               <img src="./assets/Groupe 9.png" class="w-1/4 mt-5" >
+                 <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                    <h3 class=" font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary ">
+                      
+                        Automated Appointement                        
+                    </h3>
+                    <p class="text-base text-body-color leading-relaxed mb-7">
+                        it is an appointment that is confirmed and validated automatically by the system ,  no need for the patient to come to the office to make a payment .
+                    </p>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+<!-- end type RDV -->
+<!-- about us -->
+<app-about></app-about>
+<!-- end about us -->
+
+<!-- contact us -->
+<app-contact></app-contact>  
+
+<app-footer></app-footer>

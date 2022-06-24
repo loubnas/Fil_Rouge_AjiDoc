@@ -1,0 +1,39 @@
+<div class="md:w-2/12 sm:w-1/2 hidden md:block  bg-sky-500 rounded p-3 shadow-lg fixed h-full ">
+    <div class="space-x-4 p-2 mb-5 text-center ">
+            <h2 class="font-semibold text-lg text-white capitalize font-poppins tracking-wide">AJIDOC</h2>
+    </div>
+    <ul class="space-y-2 text-sm">
+        <li>
+            <a class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-sky-400  focus:shadow-outline">
+                <i class="fa-solid fa-house-medical"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a  routerLink="/dashboard/medicalOffice" routerLinkActive="active-link" class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-sky-400 focus:shadow-outline">
+
+                <span>Medical office</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/nurse" routerLinkActive="active-link" class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-sky-400 focus:shadow-outline">
+            
+                <span>Nurse</span>
+            </a>
+        </li>
+        <li>
+            <a routerLinkActive="active-link" class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-sky-400  focus:shadow-outline">
+    
+                <span>Appointment</span>
+            </a>
+        </li>
+
+        <li>
+            <a style="margin-top: 33.5em;" routerLink="/" (click)="logout()" routerLinkActive="active-link" class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-sky-400  focus:shadow-outline">
+    
+                <span>logOut</span>
+            </a>
+        </li>
+      
+    </ul>
+</div>

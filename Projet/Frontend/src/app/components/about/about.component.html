@@ -1,0 +1,16 @@
+<app-navbar *ngIf="this.router.url === '/about'"></app-navbar>
+<div id="about" class="flex  md:flex-row flex-col ">
+    <div class="sm:w-full  md:w-1/2" >
+        <img src="./assets/Rectangle 9.png" alt="">
+    </div>
+    <div class="bg-sky-600 sm:w-full md:w-1/2 text-white p-10 ">
+        <h1 class="font-bold text-4xl pb-3 my-10 ">
+            About us 
+        </h1>
+        <p class=" text-xl ">
+            We are an "AjiDoc" platform which makes it easier for the patient to make an appointment, our site offers two types of appointments, a simple appointment which must be confirmed by the doctor and validated after having made a payment in the office, an automated appointment which is managed by the system, the latter confirms and validates the appointment automatically without the doctor interrupting . Our platform makes it easy to make an appointment and allows you to be fluid and flexible, it is also an advantage in this period when the COVID is starting to settle in our environment again most people are wary and prefer to make an appointment with a doctor using our platform today it's possible! yes it guarantees you that you will come to an appointment at the exact time without having to wait for hours and hours . Benefit from the services offered by our platform and visit your doctor easily by using our platform, you make your payment online in complete security and you also have the right to leave your comments on such a consultation to express what you feel in complete freedom! Now it's possible with AjiDoc .        </p>
+        
+    </div>
+</div>
+
+<app-footer *ngIf="this.router.url === '/about'"></app-footer>

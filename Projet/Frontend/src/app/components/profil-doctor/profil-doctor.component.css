@@ -1,0 +1,18 @@
+.pad{
+    padding: 10px;
+}
+.review-img{
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 32px;
+    width: 32px;
+    height: 32px;
+}
+.review{
+    display: block;
+    width: 100%;
+    float: left;
+    padding-left: 42px;
+    font-size: 12px;
+    color: black;
+}

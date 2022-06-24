@@ -1,0 +1,33 @@
+ <!-- navbar -->
+ <div class="w-full flex flex-row items-center p-1 justify-between  shadow-xs">
+    <div class="ml-8 text-lg text-whit hidden md:flex"><img src="assets/logo.png" ></div>
+    <nav class="flex flex-wrap justify-center -mx-5 -my-2 ">
+        <div class="px-5 py-2">
+            <a routerLink="/home"  class="link text-base leading-8 text-base hover:text-sky-400">
+                Home
+            </a>
+        </div>
+       
+        <div class="px-5 py-2">
+            <a routerLink="/about" class="link text-base leading-8 text-base hover:text-sky-400">
+                About Us
+            </a>
+        </div>
+        <div class="px-5 py-2">
+            <a routerLink="/contact"  class="link text-base leading-8 text-base hover:text-sky-400">
+                Contact Us
+            </a>
+        </div>
+    </nav>
+
+    <div class="flex flex-row-reverse mr-8  md:flex">
+        <button *ngIf="this.getUser()==null" routerLink="/login" class="text-white bg-sky-800 px-9 py-2 m-2 rounded-md">Login</button>
+        <button *ngIf="this.getUser()==null" routerLink="/registerMO" class="text-white bg-sky-800 px-9 py-2 m-2 rounded-md">Register Professionel </button>
+        <button *ngIf="this.getUser()?.userExtraInfo !=null" routerLink="/dashboard" class="text-white bg-sky-800 px-9 py-2 m-2 rounded-md">Dashboard </button>
+
+        
+        <button *ngIf="this.getUser()!=null" routerLink="/home" (click)="logout()" class="text-white bg-sky-300 px-9 py-2 m-2 rounded-md">LogOut</button>
+        <button *ngIf="this.getUser()!=null" routerLink="/profile"  class="text-white bg-sky-800 px-9 py-2 m-2 rounded-md">Profile</button>
+  
+    </div>
+</div>

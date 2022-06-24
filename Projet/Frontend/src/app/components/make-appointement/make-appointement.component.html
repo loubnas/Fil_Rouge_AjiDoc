@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="bg-sky-500 h-14 flex items-center justify-end">
+    
+</div>
+
+<div  class="flex flex-col  items-center justify-center h-screen"> 
+  <div *ngIf="connectedUser" class="w-full text-center mb-20 ">
+      <h1 class="font-bold text-4xl pb-3 ">
+        Choose an Appointment 
+      </h1>
+  </div>
+      <div *ngIf="connectedUser" class="flex flex-wrap  justify-evenly">
+         <div class=" px-20">
+          <a  routerLink="/simpleAppointement">
+          <div class="my-style-carde bg-white rounded-lg flex items-center flex-col overflow-hidden mb-10 drop-shadow-md">
+              <img src="./assets/Groupe 9.png" class="w-1/4 mt-5" >
+               <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center ">
+                  <h3 class=" font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] block hover:text-primary "> 
+                    Simple Appointement
+                  </h3>
+                  
+               </div>
+            </div>
+            </a>
+         </div>
+         <div class=" px-20">
+          <a  routerLink="/advancedAppointement">
+            <div class="my-style-carde bg-white rounded-lg flex items-center flex-col overflow-hidden mb-10 drop-shadow-md">
+             <img src="./assets/Groupe 9.png" class="w-1/4 mt-5" >
+               <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center ">
+                  <h3 class=" font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] block hover:text-primary ">
+                    Automated Appointment (15j)                      
+                  </h3>
+                  
+               </div>
+            </div>
+            </a>
+         </div>
+
+      </div>
+      <div *ngIf="!connectedUser" class="grid grid-cols-1 items-center m-40">
+        <div
+          style="width: 100%; padding: 20px"
+          class="m-auto bg-white items-center rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div class="grid grid-cols-2 gap-2 items-center m-10">
+    
+            You must log in before Continuing !
+            <button  routerLink="/login" class="text-white bg-sky-800 px-9 py-2 m-2 rounded-md">Login</button>
+          
+    
+          </div>
+        </div>
+      </div>
+   </div>
+<app-footer></app-footer>

@@ -1,0 +1,55 @@
+  
+        <app-navbar></app-navbar>
+  <!-- navbar -->
+  <div class="bg-sky-500 h-14 flex items-center justify-end">
+  
+</div>
+<!-- endnavbar -->
+<!-- bare serche -->
+<div class=" bg-sky-100 h-32 md:flex items-center justify-center">
+    
+        <div class="flex flex-col md:flex-row w-full md:w-1/2">
+            <input [(ngModel)]="this.searchKeyword" class="rounded-l-lg p-4 border-t md:w-1/2 w-full  border-b border-l text-gray-800  bg-white" placeholder="specialite"/>
+            
+            <button class="px-8 md:rounded-r-lg bg-sky-800 w-full md:w-1/3 text-white  p-4 uppercase border-sky-800 border-t border-b border-r" (click)="search()">Search</button>
+        </div>
+    </div>
+
+<!-- end bar serche -->
+<!-- count -->
+<div class="h-32 flex items-center ml-14">
+    <p class="text-sky-500 font-semibold">{{this.searchResult.totalElements}} result(s) found for: {{this.searchedKeyword}}</p>
+</div>
+<!-- end count -->
+<!-- result -->
+<div class="w-full flex flex-col items-center">
+    <!-- card -->
+        <div *ngFor="let mo of this.MOs  | paginate: { id: 'server', itemsPerPage: this.searchLimit, currentPage: this.searchPage+1, totalItems: this.searchResult.totalElements }" style="padding: 20px;" class="bg-sky-100  w-3/4 flex items-center rounded-xl drop-shadow-md flex-col md:flex-row mb-7">
+            <div class="p-2">
+                <img (error)="defaultImage($event)"  [src]="mo.administrator?.image" class=" doc-img rounded-xl drop-shadow-md">
+            </div>
+            <div class="h-3/4 p-4" style="width: 50%;">
+                <h1 class="text-gray-500 text-2xl font-semibold pb-5"> {{mo.name}}</h1>
+                <h1 class="text-gray-500 text-2xl font-semibold pb-5">Dr      : {{mo.administrator?.firstname}} {{mo.administrator?.lastname}}</h1>
+                <p class="text-sky-500 w-1/2">{{mo.administrator?.userExtraInfo?.diplome}} , {{mo.administrator?.userExtraInfo?.specialite}} in {{mo.administrator?.ville}}</p>
+                <p class="text-sky-500 w-1/2" > <span style="color:black">Consultation Prise : </span> 200 DH </p>
+            </div>
+            <div class="flex flex-col">
+                <button class=" rounded-lg bg-sky-800 w-full  text-white py-2 px-6 m-2"  (click)="makeAppointement(mo)">
+                    
+                    <a routerLink="/profilDoctor" (click)="makeAppointement(mo)">Make an Appointment</a> 
+                </button>
+                <button class=" rounded-lg bg-sky-500 w-full text-white py-2 px-6 m-2" (click)="details(mo)">
+                    <a href="/profilDoctor" (click)="details(mo)">See Profil</a> 
+                </button>
+            </div>
+        </div>
+        <div class="has-text-centered">
+            <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+            <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+        </div>
+    <!-- end crad -->
+</div>
+<!-- end result -->
+
+<app-footer></app-footer>

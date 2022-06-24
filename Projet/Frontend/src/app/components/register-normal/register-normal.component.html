@@ -1,0 +1,49 @@
+
+<section class="min-h-screen flex flex-col mb-5">
+
+  <div class="flex flex-1 items-center justify-center">
+      <div class="rounded-lg  bg-sky-50 px-4 lg:px-24 py-6 lg:max-w-xl sm:max-w-md w-full text-center">
+          <div class="text-center">
+              <h1 class="font-bold tracking-wider text-3xl  w-full text-gray-600">
+                  New in 'AjiDoc' ?
+              </h1>
+              <h2 class="mb-8" >Enter your information to continue </h2>
+              <div class="py-2 text-left">
+                  <input [(ngModel)]="this.signup_lastname" type="text" class="bg-white border-2 border-gray-100 focus:outline-none  block w-full py-2 px-4 rounded-lg focus:border-gray-700 " placeholder="LastName" />
+              </div>
+              <div class="py-2 text-left">
+                  <input [(ngModel)]="this.signup_firstname" type="text" class="bg-white border-2 border-gray-100 focus:outline-none  block w-full py-2 px-4 rounded-lg focus:border-gray-700 " placeholder="FirstName" />
+              </div>
+              <div class="py-2 text-left">
+                  <input [(ngModel)]="this.signup_email" type="email" class="bg-white border-2 border-gray-100 focus:outline-none  block w-full py-2 px-4 rounded-lg focus:border-gray-700 " placeholder="Email" />
+              </div>
+              <div class="py-2 text-left">
+                  <input [(ngModel)]="this.signup_phone" type="text" class="bg-white border-2 border-gray-100 focus:outline-none  block w-full py-2 px-4 rounded-lg focus:border-gray-700 " placeholder="Phone number" />
+              </div>
+              <div class="py-2 text-left">
+                  <input [(ngModel)]="this.signup_password" type="password" class="bg-white border-2 border-gray-100 focus:outline-none  block w-full py-2 px-4 rounded-lg focus:border-gray-700 " placeholder="Password" />
+              </div>
+              <div class="py-2 text-left">
+                  <input [(ngModel)]="this.signup_password2" type="password" class="bg-white border-2 border-gray-100 focus:outline-none  block w-full py-2 px-4 rounded-lg focus:border-gray-700 " placeholder="Confirm your Password" />
+              </div>
+              <div class="py-2">
+                  <button (click)="signup()" type="submit" class="border-2 border-gray-100 focus:outline-none bg-sky-800 text-white font-bold tracking-wider block w-full p-2 rounded-lg focus:border-gray-700 hover:bg-sky-900">
+                    Sign in
+                  </button>
+                  <p *ngIf="this.loginError!=''" class="text-sm font-semibold mt-2 pt-1 mb-0" style="color: red;">
+                    {{this.loginError}}
+                  </p>
+              </div>
+            </div>
+          <div class="text-center mt-12">
+              <span>
+                 You aready have an account ?
+              </span><br>
+              <a routerLink="/login" class="font-light text-md text-indigo-600 underline font-semibold hover:text-indigo-800">LOGIN</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+

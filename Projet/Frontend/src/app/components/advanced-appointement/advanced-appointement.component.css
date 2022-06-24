@@ -1,0 +1,6 @@
+.m-40{
+    margin: 15rem 10rem !important;
+}
+.ng-dirty.ng-invalid{
+    border-color:red;
+}
